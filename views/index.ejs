@@ -8,25 +8,22 @@
     <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
-
-    <form action="/" method="post">
-        <input type="cityName" type="text" name="cityName">
-        <button type="submit">GO</button>
-    </form>
     <header> 
         <nav>
-            <section id="headbar">
-                <div class="left">
-                    left
-                </div>
-                <div class="right">
-                    right
-                </div>
-            </section>
+            <div class="left">
+                <p>left</p>
+            </div>
         </nav>
     </header>
-    <p><%=Temp%></p>
-    <p><%=Type%></p>
-    
+    <div class="container">
+        <div class="form">
+            <form action="/" method="post">
+                <div class="search">
+                    <input type="text" id="cityName" name="cityName" class="Input" autocomplete="off" >
+                    <button type="submit" class="submit">GO</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
