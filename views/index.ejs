@@ -8,16 +8,15 @@
     <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
-    <header>
+
+    <form action="/" method="post">
+        <input type="cityName" type="text" name="cityName">
+        <button type="submit">GO</button>
+    </form>
+    <header> 
         <nav>
-            <section id="headbar">
-                <div class="left">
-                    left
-                </div>
-                <div class="right">
-                    right
-                </div>
-            </section>
+            <p><%=Temp%></p>
+            <p><%=Type%></p>
         </nav>
     </header>
     
