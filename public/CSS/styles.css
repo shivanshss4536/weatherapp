@@ -35,18 +35,18 @@ body{
   transform: translate(-50%, -50%); 
 }
 .form {
-    --input-text-color: #fff;
-    --input-bg-color: #283542;
+    --input-text-color: #ffffff;
+    --input-bg-color: transparent;
     --focus-input-bg-color: transparent;
-    --text-color: #949faa;
-    --active-color: #080c0f;  /*#1b9bee;*/
-    --width-of-input: 24rem;
-    --inline-padding-of-input: 1.2em;
-    --gap: 0.9rem;
+    --text-color: #ffffff;
+    --active-color: #0b0000;  /*#1b9bee;*/
+    --width-of-input: 23rem;
+    --inline-padding-of-input: 0.4rem;
+    --gap: 1.6rem;
   }
   /* form style */
   .form {
-    font-size: 1.2rem;
+    font-size: 2.5rem;
     display: flex;
     gap: 0.5rem;
     align-items: center;
@@ -69,8 +69,8 @@ body{
   /* label styling */
   label {
     width: 100%;
-    padding: 0.8em;
-    height: 40px;
+    padding: 0.4rem;
+    height: 60px;
     padding-inline: var(--inline-padding-of-input);
     display: flex;
     align-items: center;
@@ -86,7 +86,7 @@ body{
   }
   /* svg -- size */
   svg {
-    width: 17px;
+    width: 1.5rem;
     display: block;
   }
   /* styling of close button */
@@ -113,6 +113,7 @@ body{
     margin-inline: min(2em,calc(var(--inline-padding-of-input) + var(--gap)));
     background: none;
     border: none;
+    font-size: 1.5rem;
   }
   
   .input:focus {
@@ -124,12 +125,13 @@ body{
   }
   /* input background change in focus */
   .input:focus ~ .fancy-bg {
-    border: 1px solid var(--active-color);
+    border: 1px solid white;
+    filter: blur(2px);
     background: var(--focus-input-bg-color);
   }
   /* search icon color change in focus */
   .input:focus ~ .search {
-    fill: var(--active-color);
+    fill: white;
   }
   /* showing close button when typing */
   .input:valid ~ .close-btn {
