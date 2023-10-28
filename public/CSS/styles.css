@@ -9,7 +9,7 @@ body{
 }
 .bgimg{
     width: -webkit-fill-available;
-    height: 85vh;
+    height: 90vh;
     position: fixed;
 }
 #headbar{
