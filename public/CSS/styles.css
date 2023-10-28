@@ -83,6 +83,8 @@ body{
   .search {
     fill: var(--text-color);
     left: var(--inline-padding-of-input);
+    
+    font-family: 'Roboto', sans-serif;;
   }
   /* svg -- size */
   svg {
