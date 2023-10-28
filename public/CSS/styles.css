@@ -125,7 +125,7 @@ body{
   }
   /* input background change in focus */
   .input:focus ~ .fancy-bg {
-    border: 1px solid white;
+    border: 1px solid rgb(98, 98, 98);
     filter: blur(2px);
     background: var(--focus-input-bg-color);
   }
