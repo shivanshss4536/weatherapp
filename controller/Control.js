@@ -11,23 +11,6 @@ const formattedDate = dateUtils.formatDate(date);
 
 const mainRoute=(req,res)=>{
     res.render("index");
-    // const cityName="delhi"
-    // const apikey="24be5d3fa2d486a7e6e67ab9f3624567";
-    // const url="https://api.openweathermap.org/data/2.5/forecast?q="+cityName+"&appid="+apikey;
-
-    // //API call
-    // https.get(url,function(response){
-    //     console.log(response.statusCode)
-    //     if(response.statusCode=="404"){
-    //         res.render("index");
-    //     }
-    //     response.on("data",function(data){
-    //         const weatherData=JSON.parse(data);
-    //         const temp=weatherData.list[0].main.temp;
-    //         const type=weatherData.list[0].weather[0].main;
-    //         res.render("index",{Temp:temp,Type:type});
-    //     })
-    // })
 }
 
 const Search=(req,res)=>{
@@ -38,18 +21,19 @@ const Search=(req,res)=>{
     //API call
     https.get(url,function(response){
         if(response.statusCode=="404"){
-            res.render("index");
+            res.render("fail");
         }
-
+        console.log(url);
         let resultData = '';
         response.on('data', data => resultData += data);
         
         response.on("end",()=>{
-            
             const weatherData=JSON.parse(resultData);
             const temp=weatherData.list[0].main.temp
             const type=weatherData.list[0].weather[0].main
-            res.render("index",{Temp:temp,Type:type});
+            console.log(temp);
+            console.log(type);
+            res.render("target",{Temp:temp,Type:type});
         })
     })
 }
