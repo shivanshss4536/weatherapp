@@ -1,5 +1,5 @@
 nav{
-    background-color:#306387;
+    background-color:#FFF2D8;
 }
 body{
     
@@ -11,6 +11,11 @@ body{
     width: -webkit-fill-available;
     height: 90vh;
     position: fixed;
+}
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #headbar{
     margin-left: auto;
@@ -26,7 +31,7 @@ body{
 }
 .logo{
     overflow-x: hidden;
-    width: 214px;
+    width: 25rem;
 }
 .container{
   position: absolute;
@@ -128,7 +133,7 @@ body{
   /* input background change in focus */
   .input:focus ~ .fancy-bg {
     border: 1px solid rgb(98, 98, 98);
-    filter: blur(2px);
+    filter: blur(1.5px);
     background: var(--focus-input-bg-color);
   }
   /* search icon color change in focus */

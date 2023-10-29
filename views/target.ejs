@@ -4,10 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>target</title>
+    <link rel="stylesheet" href="targetStyle.css">
 </head>
 <body>
-    <%=Temp%>
+    
     <br>
-    <%=Type%>
+    
+    <div class="weather-app">
+        <h1>Weather App</h1>
+    
+        <p>Today: <%=Type%></p>
+        <p>Temperature: <%=Temp%></p>
+        <p>Humidity: 69%</p>
+        <p>Wind: 6 km/h East</p>
+        <img src="https://example.com/weather-app/icon.png" alt="Weather icon">
 </body>
 </html>

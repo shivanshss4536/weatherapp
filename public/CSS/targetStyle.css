@@ -1,0 +1,24 @@
+body {
+    font-family: sans-serif;
+  }
+
+  .weather-app {
+    width: 500px;
+    margin: 0 auto;
+  }
+
+  .weather-app h1 {
+    text-align: center;
+    font-size: 24px;
+  }
+
+  .weather-app p {
+    font-size: 16px;
+  }
+
+  .weather-app img {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+  }
