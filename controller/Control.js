@@ -38,13 +38,15 @@ const Search=(req,res)=>{
             const windSpeed=weatherData.list[0].wind.speed;
             const windSpeedDirection=Utils.windDegreeToDirection(weatherData.list[0].wind.speed);
             const pressure=weatherData.list[0].main.pressure;
+            const min=weatherData.list[0].main.temp_min;
+            const max=weatherData.list[0].main.temp_max;
 
             const timestamp = weatherData.list[0].dt;
             const formatDate = new Date(timestamp * 1000); // Convert Unix timestamp to Date
             const date = Utils.formatDate(formatDate);
             
             const imgURL="https://openweathermap.org/img/wn/"+img+"@4x.png"
-            res.render("target",{Date:date,City:cityName,Temp:temp,Type:type,Humidity:humidity,WindSpeed:windSpeed,WindSpeedDirection:windSpeedDirection,Pressure:pressure,img:imgURL});
+            res.render("target",{Date:date,City:cityName,Temp:temp,Min:min,Max:max,Type:type,Humidity:humidity,WindSpeed:windSpeed,WindSpeedDirection:windSpeedDirection,Pressure:pressure,img:imgURL});
         })
     })
 }
