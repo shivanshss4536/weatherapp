@@ -13,6 +13,21 @@ const mainRoute=(req,res)=>{
     res.render("index");
 }
 
+function windDegreeToDirection(windDegree) {
+    // Check if the wind degree is valid
+    if (windDegree < 0 || windDegree > 360) {
+    return "Invalid wind degree";
+    }
+
+    // Define the cardinal directions
+    const cardinalDirections = ["North", "East", "South", "West"];
+
+    // Calculate the cardinal direction index
+    const cardinalDirectionIndex = Math.floor((windDegree + 22.5) / 45);
+    // Return the cardinal direction
+    return cardinalDirections[cardinalDirectionIndex];
+}
+
 const Search=(req,res)=>{
     const cityName=req.body.cityName;
     const apikey="24be5d3fa2d486a7e6e67ab9f3624567";
@@ -29,11 +44,17 @@ const Search=(req,res)=>{
         
         response.on("end",()=>{
             const weatherData=JSON.parse(resultData);
-            const temp=weatherData.list[0].main.temp
+            const Ktemp=weatherData.list[0].main.temp;
+            const Decimaltemp=Ktemp-273;
+            const temp=Decimaltemp.toFixed(1)
             const type=weatherData.list[0].weather[0].main
-            console.log(temp);
-            console.log(type);
-            res.render("target",{Temp:temp,Type:type});
+            const img=weatherData.list[0].weather[0].icon;
+            const humidity=weatherData.list[0].main.humidity;
+            const windSpeed=weatherData.list[0].wind.speed;
+            const windSpeedDirection=windDegreeToDirection(weatherData.list[0].wind.speed);
+            
+            const imgURL="https://openweathermap.org/img/wn/"+img+"@4x.png"
+            res.render("target",{City:cityName,Temp:temp,Type:type,Humidity:humidity,WindSpeed:windSpeed,WindSpeedDirection:windSpeedDirection,img:imgURL});
         })
     })
 }
