@@ -29,17 +29,15 @@ const Search=(req,res)=>{
         
         response.on("end",()=>{
             const weatherData=JSON.parse(resultData);
-            const Ktemp=weatherData.list[0].main.temp;
-            const Decimaltemp=Ktemp-273;
-            const temp=Decimaltemp.toFixed(1)
+            const temp=Utils.KtoCelsius(weatherData.list[0].main.temp);
             const type=weatherData.list[0].weather[0].description;
             const img=weatherData.list[0].weather[0].icon;
             const humidity=weatherData.list[0].main.humidity;
             const windSpeed=weatherData.list[0].wind.speed;
             const windSpeedDirection=Utils.windDegreeToDirection(weatherData.list[0].wind.speed);
             const pressure=weatherData.list[0].main.pressure;
-            const min=weatherData.list[0].main.temp_min;
-            const max=weatherData.list[0].main.temp_max;
+            const min=Utils.KtoCelsius(weatherData.list[0].main.temp_min);
+            const max=Utils.KtoCelsius(weatherData.list[0].main.temp_max);
 
             const timestamp = weatherData.list[0].dt;
             const formatDate = new Date(timestamp * 1000); // Convert Unix timestamp to Date

@@ -20,7 +20,12 @@ function windDegreeToDirection(windDegree) {
     return cardinalDirections[cardinalDirectionIndex];
 }
 
+function KtoCelsius(Ktemp){
+    const Decimaltemp=Ktemp-273;
+    const temp=Decimaltemp.toFixed(1);
+    return temp;
+}
 // Export the functions for use in other files
 module.exports = {
-    formatDate,windDegreeToDirection
+    formatDate,windDegreeToDirection,KtoCelsius
 };
