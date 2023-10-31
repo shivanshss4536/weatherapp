@@ -8,12 +8,19 @@ body{
     margin: 0px;
     padding: 0px;
 }
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color:#FFF2D8;
+  height: 9rem;
+}
 .bgimg{
     width: -webkit-fill-available;
     height: 90vh;
     position: fixed;
 }
-.navbar{
+.Logo{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,25 +34,22 @@ body{
     
 }
 
+.container{
+  margin-right: 10px;
+}
 .submit{
     flex: 1;
 }
-.logo{
+.logoimg{
     overflow-x: hidden;
     width: 25rem;
     margin-top: 1em;
 }
-.container{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); 
-}
 .form {
-    --input-text-color: #ffffff;
+    --input-text-color: #000000;
     --input-bg-color: transparent;
     --focus-input-bg-color: transparent;
-    --text-color: #ffffff;
+    --text-color: #080000;
     --active-color: #0b0000;  /*#1b9bee;*/
     --width-of-input: 23rem;
     --inline-padding-of-input: 0.4rem;
@@ -106,7 +110,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: #ffffff;
     padding: 0.1em;
     width: 20px;
     height: 20px;
@@ -140,7 +144,7 @@ body{
   }
   /* search icon color change in focus */
   .input:focus ~ .search {
-    fill: white;
+    fill: rgb(0, 0, 0);
   }
   /* showing close button when typing */
   .input:valid ~ .close-btn {
@@ -155,3 +159,26 @@ body{
     -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
     -webkit-transition-delay: 9999s;
   }
+
+
+@media (max-width:500px){
+  .form {
+    width:50px;
+    font-size: 1.5rem;
+  }
+  .search {
+    margin-left: 10px;
+    left: 0;
+    font-family: 'Roboto', sans-serif;;
+  }
+  .logoimg{
+    overflow-x: hidden;
+    width: 19rem;
+  }
+  .close-btn {
+    display: none;
+  }
+  label {
+    height: 2.5rem;
+  }
+}
