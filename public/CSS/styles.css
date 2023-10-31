@@ -1,8 +1,9 @@
 nav{
     background-color:#FFF2D8;
+    
 }
 body{
-    
+    background-color: #FFF2D8;
     
     margin: 0px;
     padding: 0px;
@@ -22,7 +23,7 @@ body{
     display: flex;
     justify-content: center;
     align-content: center;
-    height: 6rem;
+    height: 5rem;
     
 }
 
@@ -32,6 +33,7 @@ body{
 .logo{
     overflow-x: hidden;
     width: 25rem;
+    margin-top: 1em;
 }
 .container{
   position: absolute;
