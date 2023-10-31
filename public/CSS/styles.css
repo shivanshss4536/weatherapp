@@ -1,18 +1,17 @@
 body{
-    background-color: #FFF2D8;
+    
     
     margin: 0px;
     padding: 0px;
+    background-image:url("../mainBG.jpg");
 }
-.bgimg{
-    width: -webkit-fill-available;
-    height: 90vh;
-    position: fixed;
-}
+
+
 .navbar{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: #FFF2D8;
 }
 .container{
   margin-right: 10px;
