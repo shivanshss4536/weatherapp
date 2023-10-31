@@ -1,5 +1,9 @@
-body{
+nav{
+    background-color:#FFF2D8;
     
+}
+body{
+    background-color: #FFF2D8;
     
     margin: 0px;
     padding: 0px;
@@ -21,6 +25,15 @@ body{
   align-items: center;
   justify-content: center;
 }
+#headbar{
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 5rem;
+    
+}
+
 .container{
   margin-right: 10px;
 }
@@ -30,12 +43,13 @@ body{
 .logoimg{
     overflow-x: hidden;
     width: 25rem;
+    margin-top: 1em;
 }
 .form {
-    --input-text-color: #ffffff;
+    --input-text-color: #000000;
     --input-bg-color: transparent;
     --focus-input-bg-color: transparent;
-    --text-color: #ffffff;
+    --text-color: #080000;
     --active-color: #0b0000;  /*#1b9bee;*/
     --width-of-input: 23rem;
     --inline-padding-of-input: 0.4rem;
@@ -96,7 +110,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: #ffffff;
     padding: 0.1em;
     width: 20px;
     height: 20px;
@@ -130,7 +144,7 @@ body{
   }
   /* search icon color change in focus */
   .input:focus ~ .search {
-    fill: white;
+    fill: rgb(0, 0, 0);
   }
   /* showing close button when typing */
   .input:valid ~ .close-btn {
