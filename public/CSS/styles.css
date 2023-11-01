@@ -146,10 +146,49 @@ body{
     width: 13.5rem;
   }
 .main-Content{
+  margin-top: 10px;
+  margin-right: 10px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-items: stretch;
+  column-gap: 5rem;
+  row-gap: 4rem;
+}
+
+.item-A{
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 130px 130px 100px 50px 100px 100px ;
+  justify-items: center;
+
+}
+.item-b{
+  font-size: 4rem;
+  font-family: 'Noto Sans', sans-serif;
+}
+.item-c{
+  font-size: 2rem;
+}
+.item-d,.item-e,.item-f{
+  font-size: 1.2rem;
+}
+.item-g,.item-h,.item-i,.item-j,.item-k,.item-l,.item-m,.item-n{
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  border: 1px solid orange;
+  border-radius: 8%;
+  box-shadow: orange 1px 1px 1px 1px;
+  backdrop-filter: blur(5px);
+  font-size: 1.5rem;
 }
+
 @media(max-width:570px){
   .form {
     --width-of-input: 100%;
@@ -159,5 +198,47 @@ body{
   }
   .input {
     font-size: 1rem;
+  }
+}
+@media(max-width:1000px){
+  body{
+    background-image:url("../BGmobile.jpg");
+}
+  .main-Content{
+    margin-top: 10px;
+    margin-right: 10px;
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    column-gap: 5rem;
+    row-gap: 4rem;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
+  }
+  .item-A{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+  .item-b{
+    font-size: 3rem;
+    font-family: 'Noto Sans', sans-serif;
+  }
+  .item-c{
+    font-size: 1rem;
+  }
+  .item-g,.item-h,.item-i,.item-j,.item-k,.item-l,.item-m,.item-n{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 0px solid white;
+    border-radius: 8%;
+    background-color: orange; 
+    backdrop-filter: blur(5px);
+    font-size: 1.5rem;
   }
 }

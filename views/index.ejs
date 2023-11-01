@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&family=Roboto&display=swap"
         rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Noto+Sans:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="navbar"> 
@@ -48,16 +51,22 @@
         </div>
     </header>
     <div class="main-Content">
-        <h1><%=City%></h1>
-        <p>Today: <%=Type%></p>
-        <p>Date: <%=Date%></p>
-        <p>Temperature: <%=Temp %>°C</p>
-        <p>Min: <%=Min %>°C</p>
-        <p>Max: <%=Max %>°C</p>
-        <p>Humidity: <%=Humidity %></p>
-        <p>Pressure: <%=Pressure%></p>
-        <p>Wind: <%=WindSpeed%> km/h <%=WindSpeedDirection%></p>
-        <img src=<%=img %> alt="Weather icon" class="icon">
+        <div class="item-A">
+            <div class="item-a"><img src=<%=img %> alt="Weather icon" class="icon"></div>
+            <div class="item-b"><p><%=Temp %>°C</p></div>
+            <div class="item-c"><p><%=Type%></p></div>
+            <div class="item-d"><p>Date: <%=Date%></p></div>
+            <div class="item-e"><h1><%=City%></h1></div>
+            <div class="item-f"><p><%=Day%></p></div>
+        </div>
+        <div class="item-g"><p>Visibility: <%=Visibility%></p></div>
+        <div class="item-h"><p>Humidity: <%=Humidity %></p></div>
+        <div class="item-i"><p>Pressure: <%=Pressure%></p></div>
+        <div class="item-j"><p>Wind: <%=WindSpeed%> km/h <%=WindSpeedDirection%></p></div>
+        <div class="item-k"><p>SeaLevel: <%=SeaLevel%></div>
+        <div class="item-l"><p>GroundLevel: <%=GroundLevel%></div>
+        <div class="item-m"><p>Feels like: <%=Feel%></div>
+        <div class="item-n"><p>Min: <%=Min %>°C  Max: <%=Max %>°C</p></div>
     </div>  
     <!-- <div class="container">
         <div class="form">
