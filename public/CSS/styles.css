@@ -26,6 +26,7 @@ body{
 }
 .logoimg{
   width: 10rem;
+  
 }
 .form {
     --input-text-color: #000000;
@@ -141,3 +142,22 @@ body{
     -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
     -webkit-transition-delay: 9999s;
   }
+  .icon{
+    width: 13.5rem;
+  }
+.main-Content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media(max-width:570px){
+  .form {
+    --width-of-input: 100%;
+  }
+  label {
+    height: 2rem;
+  }
+  .input {
+    font-size: 1rem;
+  }
+}
