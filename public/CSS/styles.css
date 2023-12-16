@@ -1,26 +1,19 @@
 nav{
     background-color:#FFF2D8;
-    
 }
+
 body{
     background-color: #FFF2D8;
     
     margin: 0px;
     padding: 0px;
 }
-.navbar{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color:#FFF2D8;
-  height: 9rem;
-}
 .bgimg{
     width: -webkit-fill-available;
     height: 90vh;
     position: fixed;
 }
-.Logo{
+.navbar{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,20 +23,23 @@ body{
     display: flex;
     justify-content: center;
     align-content: center;
-    height: 5rem;
+    height: 6rem;
     
 }
 
-.container{
-  margin-right: 10px;
-}
 .submit{
     flex: 1;
 }
-.logoimg{
+.logo{
     overflow-x: hidden;
     width: 25rem;
     margin-top: 1em;
+}
+.container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
 }
 .form {
     --input-text-color: #000000;
@@ -159,26 +155,3 @@ body{
     -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
     -webkit-transition-delay: 9999s;
   }
-
-
-@media (max-width:500px){
-  .form {
-    width:50px;
-    font-size: 1.5rem;
-  }
-  .search {
-    margin-left: 10px;
-    left: 0;
-    font-family: 'Roboto', sans-serif;;
-  }
-  .logoimg{
-    overflow-x: hidden;
-    width: 19rem;
-  }
-  .close-btn {
-    display: none;
-  }
-  label {
-    height: 2.5rem;
-  }
-}
