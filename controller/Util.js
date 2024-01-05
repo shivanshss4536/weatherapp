@@ -43,9 +43,9 @@ function getDayTime(unixTimestamp) {
 }
 
 
-function KtoCelsius(Ktemp) {
-    const CelsiusTemp = Ktemp - 273.15;
-    const temp = CelsiusTemp.toFixed(1);
+function KtoCelsius(Ktemp){
+    const Decimaltemp=Ktemp-273;
+    const temp=Decimaltemp.toFixed(1);
     return temp;
 }
 

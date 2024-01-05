@@ -55,7 +55,7 @@ const Search = (req, res) => {
     const cityName = req.body.cityName;
     const apikey = "24be5d3fa2d486a7e6e67ab9f3624567";
     const url = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + apikey;
-    console.log(url);
+
     //API call
     https.get(url, function (response) {
         if (response.statusCode == "404") {
