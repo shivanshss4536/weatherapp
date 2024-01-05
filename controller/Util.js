@@ -43,9 +43,29 @@ function getDayTime(unixTimestamp) {
 }
 
 
-function KtoCelsius(Ktemp){
-    const Decimaltemp=Ktemp-273;
-    const temp=Decimaltemp.toFixed(1);
+function getDayTime(unixTimestamp) {
+    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const now = new Date();
+    const dayOfWeek = daysOfWeek[now.getDay()];
+    let hours = now.getHours();
+    const minutes = now.getMinutes();
+    const amOrPm = hours < 12 ? "AM" : "PM";
+
+    if (hours === 0) {
+        hours = 12; // 12:00 AM
+    } else if (hours > 12) {
+        hours -= 12;
+    }
+
+    const formattedTime = `${dayOfWeek} ${hours}:${minutes < 10 ? '0' : ''}${minutes} ${amOrPm}`;
+
+    return formattedTime;
+}
+
+
+function KtoCelsius(Ktemp) {
+    const CelsiusTemp = Ktemp - 273.15;
+    const temp = CelsiusTemp.toFixed(1);
     return temp;
 }
 
