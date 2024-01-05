@@ -32,14 +32,19 @@ const mainRoute = (req, res) => {
             const pressure = weatherData.list[0].main.pressure;
             const min = Utils.KtoCelsius(weatherData.list[0].main.temp_min);
             const max = Utils.KtoCelsius(weatherData.list[0].main.temp_max);
+            const visibility=weatherData.list[0].visibility;
+            const seaLevel=weatherData.list[0].main.sea_level;
+            const groundLevel=weatherData.list[0].main.grnd_level;
+            const feel=weatherData.list[0].main.feels_like;
 
             const timestamp = weatherData.list[0].dt;
             const formatDate = new Date(timestamp * 1000); // Convert Unix timestamp to Date
             const date = Utils.formatDate(formatDate);
+            const day=Utils.getDayTime(timestamp);
 
 
             console.log(img);
-            res.render("index", { Date: date, City: cityName, Temp: temp, Min: min, Max: max, Type: type, Humidity: humidity, WindSpeed: windSpeed, WindSpeedDirection: windSpeedDirection, Pressure: pressure, img: img });
+            res.render("index", { Date: date, City: cityName,Day:day,Visibility:visibility,Feel:feel,SeaLevel:seaLevel,GroundLevel:groundLevel, Temp: temp, Min: min, Max: max, Type: type, Humidity: humidity, WindSpeed: windSpeed, WindSpeedDirection: windSpeedDirection, Pressure: pressure, img: img });
         })
     })
 }
@@ -62,21 +67,27 @@ const Search = (req, res) => {
 
             response.on("end", () => {
                 const weatherData = JSON.parse(resultData);
-                const temp = Utils.KtoCelsius(weatherData.list[0].main.temp);
-                const type = weatherData.list[0].weather[0].description;
-                const img = Utils.SelectIcon(weatherData.list[0].weather[0].icon);
-                const humidity = weatherData.list[0].main.humidity;
-                const windSpeed = weatherData.list[0].wind.speed;
-                const windSpeedDirection = Utils.windDegreeToDirection(weatherData.list[0].wind.speed);
-                const pressure = weatherData.list[0].main.pressure;
-                const min = Utils.KtoCelsius(weatherData.list[0].main.temp_min);
-                const max = Utils.KtoCelsius(weatherData.list[0].main.temp_max);
+            const temp = Utils.KtoCelsius(weatherData.list[0].main.temp);
+            const type = weatherData.list[0].weather[0].description;
+            const img = Utils.SelectIcon(weatherData.list[0].weather[0].icon);
+            const humidity = weatherData.list[0].main.humidity;
+            const windSpeed = weatherData.list[0].wind.speed;
+            const windSpeedDirection = Utils.windDegreeToDirection(weatherData.list[0].wind.speed);
+            const pressure = weatherData.list[0].main.pressure;
+            const min = Utils.KtoCelsius(weatherData.list[0].main.temp_min);
+            const max = Utils.KtoCelsius(weatherData.list[0].main.temp_max);
+            const visibility=weatherData.list[0].visibility;
+            const seaLevel=weatherData.list[0].main.sea_level;
+            const groundLevel=weatherData.list[0].main.grnd_level;
+            const feel=weatherData.list[0].main.feels_like;
 
-                const timestamp = weatherData.list[0].dt;
-                const formatDate = new Date(timestamp * 1000); // Convert Unix timestamp to Date
-                const date = Utils.formatDate(formatDate);
+            const timestamp = weatherData.list[0].dt;
+            const formatDate = new Date(timestamp * 1000); // Convert Unix timestamp to Date
+            const date = Utils.formatDate(formatDate);
+            const day=Utils.getDayTime(timestamp);
 
-                res.render("index", { Date: date, City: cityName, Temp: temp, Min: min, Max: max, Type: type, Humidity: humidity, WindSpeed: windSpeed, WindSpeedDirection: windSpeedDirection, Pressure: pressure, img: img });
+
+                res.render("index", { Date: date, City: cityName,Day:day,Visibility:visibility,Feel:feel,SeaLevel:seaLevel,GroundLevel:groundLevel, Temp: temp, Min: min, Max: max, Type: type, Humidity: humidity, WindSpeed: windSpeed, WindSpeedDirection: windSpeedDirection, Pressure: pressure, img: img });
             })
         }
     })
