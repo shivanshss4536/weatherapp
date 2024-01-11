@@ -3,11 +3,10 @@ nav{
     
 }
 body{
-    
+    background-color: #FFF2D8;
     
     margin: 0px;
     padding: 0px;
-    background-image:url("../mainBG.jpg");
 }
 .navbar{
   display: flex;
@@ -43,7 +42,7 @@ body{
 }
 .logoimg{
     overflow-x: hidden;
-    width: 10rem;
+    width: 25rem;
     margin-top: 1em;
 }
 .form {
