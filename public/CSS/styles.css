@@ -6,9 +6,9 @@ body{
     /* background-image:url("../mainBG.jpg"); */
 }
 video{
+  left: -1%;
   position: absolute;
-  right: 0;
-  bottom: 0;
+  width: 101%;
   z-index: -1;
 }
 
@@ -31,7 +31,9 @@ video{
     margin-top: 1em;
 }
 .logoimg{
-  width: 10rem;
+  position: relative;
+    left: 11px;
+    width: 5rem;
   
 }
 .form {
@@ -70,7 +72,7 @@ video{
   label {
     width: 100%;
     padding: 0.4rem;
-    height: 60px;
+    height: 30px;
     padding-inline: var(--inline-padding-of-input);
     display: flex;
     align-items: center;
