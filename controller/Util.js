@@ -76,9 +76,6 @@ function SelectIcon(icon){
     else if(icon=="01n"){
         return "/Icons/clear-night.svg";
     }
-    else if(icon=="01n"){
-        return "/Icons/clear-night.svg";
-    }
     else if(icon=="02d"){
         return "/Icons/few-cloud-night.svg";
     }
@@ -116,7 +113,29 @@ function SelectIcon(icon){
 
 }
 
+function SelectBg(icon){
+    if(icon=="01d" || icon=="02d"){
+        return "/video-background/Sunny.mp4";
+    }
+    else if(icon=="03d" || icon=="03n" || icon=="04d" || icon=="04n"){
+        return "/video-background/Foggy.mp4";
+    }
+    else if(icon=="11d" || icon=="11n" || icon=="09d" || icon=="09n" || icon=="10d" || icon=="10n"){
+        return "/video-background/Rainy.mp4";
+    }
+    else if(icon=="13d" || icon=="13n"){
+        return "/video-background/Snow.mp4";
+    }
+    else if(icon=="50d" || icon=="50n"){
+        return "/video-background/Foggy.mp4";
+    }
+    else{
+        return "/video-background/Night.mp4"
+    }
+}
+// "/video background/Windy.mp4"
+
 // Export the functions for use in other files
 module.exports = {
-    formatDate,windDegreeToDirection,KtoCelsius,SelectIcon,getDayTime
+    formatDate,windDegreeToDirection,KtoCelsius,SelectIcon,getDayTime,SelectBg
 };

@@ -41,10 +41,11 @@ const mainRoute = (req, res) => {
             const formatDate = new Date(timestamp * 1000); // Convert Unix timestamp to Date
             const date = Utils.formatDate(formatDate);
             const day=Utils.getDayTime(timestamp);
-
+            const bg=Utils.SelectBg(weatherData.list[0].weather[0].icon)
 
             console.log(img);
-            res.render("index", { Date: date, City: cityName,Day:day,Visibility:visibility,Feel:feel,SeaLevel:seaLevel,GroundLevel:groundLevel, Temp: temp, Min: min, Max: max, Type: type, Humidity: humidity, WindSpeed: windSpeed, WindSpeedDirection: windSpeedDirection, Pressure: pressure, img: img });
+            console.log(bg);
+            res.render("index", { Date: date, City: cityName,Day:day,Visibility:visibility,Feel:feel,SeaLevel:seaLevel,GroundLevel:groundLevel, Temp: temp, Min: min, Max: max, Type: type, Humidity: humidity, WindSpeed: windSpeed, WindSpeedDirection: windSpeedDirection, Pressure: pressure, img: img, bg: bg });
         })
     })
 }
@@ -85,9 +86,10 @@ const Search = (req, res) => {
             const formatDate = new Date(timestamp * 1000); // Convert Unix timestamp to Date
             const date = Utils.formatDate(formatDate);
             const day=Utils.getDayTime(timestamp);
+            const bg=Utils.SelectBg(weatherData.list[0].weather[0].icon)
+            console.log(bg);
 
-
-                res.render("index", { Date: date, City: cityName,Day:day,Visibility:visibility,Feel:feel,SeaLevel:seaLevel,GroundLevel:groundLevel, Temp: temp, Min: min, Max: max, Type: type, Humidity: humidity, WindSpeed: windSpeed, WindSpeedDirection: windSpeedDirection, Pressure: pressure, img: img });
+                res.render("index", { Date: date, City: cityName,Day:day,Visibility:visibility,Feel:feel,SeaLevel:seaLevel,GroundLevel:groundLevel, Temp: temp, Min: min, Max: max, Type: type, Humidity: humidity, WindSpeed: windSpeed, WindSpeedDirection: windSpeedDirection, Pressure: pressure, img: img, bg: bg });
             })
         }
     })
