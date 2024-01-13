@@ -124,7 +124,7 @@ function SelectBg(icon){
         return "/video-background/Rainy.mp4";
     }
     else if(icon=="13d" || icon=="13n"){
-        return "/video-background/Snow.mp4";
+        return "/video-background/Snowy.mp4";
     }
     else if(icon=="50d" || icon=="50n"){
         return "/video-background/Foggy.mp4";
