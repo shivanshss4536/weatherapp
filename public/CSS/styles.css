@@ -185,7 +185,7 @@ video{
 .item-d,.item-e,.item-f{
   font-size: 1.2rem;
 }
-.item-g,.item-h,.item-i,.item-j,.item-k,.item-l,.item-m,.item-n{
+.item-g,.item-h,.item-i,.item-j,.item-k,.item-l,.item-m,.item-n,.item-A{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -210,7 +210,17 @@ video{
 }
 @media(max-width:1000px){
   body{
-    background-image:url("../BGmobile.jpg");
+    background-image:url("../image-background/windy.jpg");
+    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-position: 69%;
+
+}
+video{
+  display: none;
 }
   .main-Content{
     margin-top: 10px;
