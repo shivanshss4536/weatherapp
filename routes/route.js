@@ -5,7 +5,8 @@ const {mainRoute}=require("../controller/Control")
 const {Search}=require("../controller/Control")
 
 
-
-router.route("/").get(mainRoute).post(Search);
+router.get('/',mainRoute)
+router.get('/target',Search)
+router.post('/target',Search)
 
 module.exports=router;
