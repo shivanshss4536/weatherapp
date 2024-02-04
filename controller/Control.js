@@ -35,7 +35,16 @@ const Search = (req, res) => {
                 const weatherData = JSON.parse(resultData);
             const temp = Utils.KtoCelsius(weatherData.list[0].main.temp);
             const type = weatherData.list[0].weather[0].description;
-            const img = Utils.SelectIcon(weatherData.list[0].weather[0].icon);
+
+            const mainIcon = Utils.SelectIcon(weatherData.list[0].weather[0].icon);
+            const two= Utils.SelectIcon(weatherData.list[1].weather[0].icon);
+            const three= Utils.SelectIcon(weatherData.list[2].weather[0].icon);
+            const four= Utils.SelectIcon(weatherData.list[3].weather[0].icon);
+            const five= Utils.SelectIcon(weatherData.list[4].weather[0].icon);
+            const six= Utils.SelectIcon(weatherData.list[5].weather[0].icon);
+            const seven= Utils.SelectIcon(weatherData.list[6].weather[0].icon);
+            const eight= Utils.SelectIcon(weatherData.list[7].weather[0].icon);
+
             const humidity = weatherData.list[0].main.humidity;
             const windSpeed = weatherData.list[0].wind.speed;
             const windSpeedDirection = Utils.windDegreeToDirection(weatherData.list[0].wind.speed);
@@ -47,14 +56,15 @@ const Search = (req, res) => {
             const groundLevel=weatherData.list[0].main.grnd_level;
             const feel=weatherData.list[0].main.feels_like;
 
-            const timestamp = weatherData.list[0].dt;
-            const formatDate = new Date(timestamp * 1000); // Convert Unix timestamp to Date
-            const date = Utils.formatDate(formatDate);
-            const day=Utils.getDayTime(timestamp);
+            const cloud=weatherData.list[0].clouds.all
+            const time=Utils.getCurrentTime();
             const bg=Utils.SelectBg(weatherData.list[0].weather[0].icon)
             console.log(bg);
 
-                res.render("target", { Date: date, City: cityName,Day:day,Visibility:visibility,Feel:feel,SeaLevel:seaLevel,GroundLevel:groundLevel, Temp: temp, Min: min, Max: max, Type: type, Humidity: humidity, WindSpeed: windSpeed, WindSpeedDirection: windSpeedDirection, Pressure: pressure, img: img, bg: bg });
+                res.render("target", { cloud:cloud,time:time,City: cityName,Visibility:visibility,Feel:feel,
+                    SeaLevel:seaLevel,GroundLevel:groundLevel, Temp: temp, Min: min, Max: max, Type: type, 
+                    Humidity: humidity, WindSpeed: windSpeed, WindSpeedDirection: windSpeedDirection, Pressure: pressure,
+                    img: mainIcon, bg: bg, two:two, three:three, four:four, five:five, six:six, seven:seven, eight:eight});
             })
         }
     })

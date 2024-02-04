@@ -1,11 +1,16 @@
-function formatDate() {
+function getCurrentTime() {
     const now = new Date();
+  // Format the time
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
     const day = String(now.getDate()).padStart(2, '0');
-    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    const month = monthNames[now.getMonth()];
-    const year = now.getFullYear();
+    const month = now.toLocaleString('en-US', { month: 'long' });
+    const year = String(now.getFullYear()).slice(2);
 
-    return `${day}-${month}-${year}`;
+  // Assemble the formatted string
+    const formattedTime = `${hours}:${minutes}- ${day} ${month} ${year}`;
+
+    return formattedTime;
 }
 
 function windDegreeToDirection(windDegree) {
@@ -23,49 +28,13 @@ function windDegreeToDirection(windDegree) {
     return cardinalDirections[cardinalDirectionIndex];
 }
 
-function getDayTime(unixTimestamp) {
-    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    const now = new Date();
-    const dayOfWeek = daysOfWeek[now.getDay()];
-    let hours = now.getHours();
-    const minutes = now.getMinutes();
-    const amOrPm = hours < 12 ? "AM" : "PM";
-
-    if (hours === 0) {
-        hours = 12; // 12:00 AM
-    } else if (hours > 12) {
-        hours -= 12;
-    }
-
-    const formattedTime = `${dayOfWeek} ${hours}:${minutes < 10 ? '0' : ''}${minutes} ${amOrPm}`;
-
-    return formattedTime;
-}
 
 
-function getDayTime(unixTimestamp) {
-    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    const now = new Date();
-    const dayOfWeek = daysOfWeek[now.getDay()];
-    let hours = now.getHours();
-    const minutes = now.getMinutes();
-    const amOrPm = hours < 12 ? "AM" : "PM";
-
-    if (hours === 0) {
-        hours = 12; // 12:00 AM
-    } else if (hours > 12) {
-        hours -= 12;
-    }
-
-    const formattedTime = `${dayOfWeek} ${hours}:${minutes < 10 ? '0' : ''}${minutes} ${amOrPm}`;
-
-    return formattedTime;
-}
 
 
 function KtoCelsius(Ktemp) {
-    const CelsiusTemp = Ktemp - 273.15;
-    const temp = CelsiusTemp.toFixed(1);
+    const CelsiusTemp = Ktemp - 273;
+    const temp = CelsiusTemp.toFixed(0);
     return temp;
 }
 
@@ -137,5 +106,5 @@ function SelectBg(icon){
 
 // Export the functions for use in other files
 module.exports = {
-    formatDate,windDegreeToDirection,KtoCelsius,SelectIcon,getDayTime,SelectBg
+    windDegreeToDirection,KtoCelsius,SelectIcon,SelectBg,getCurrentTime
 };
