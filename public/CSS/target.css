@@ -56,11 +56,13 @@ video{
   width: 100%;
   font-size: 28px;
   font-weight: 600;
+  margin-left: 18px;
 }
+
 img{
   
   
-  height: 49%;
+  height: 46%;
 }
 .city-time{    
   font-size: 2em;
@@ -174,6 +176,7 @@ label {
   flex-wrap: wrap;
 }
 .days-list li{
+  width: 14%;
   padding: 15px;
   cursor: pointer;
   display: flex;
@@ -655,6 +658,7 @@ overflow: hidden;
   align-items: center;
 }
 .days-list li{
+  width: 14%;
 padding: 15px;
 cursor: pointer;
 display: flex;
