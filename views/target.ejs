@@ -12,8 +12,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
 </head>
+<style>
+    body {
+        background: url('<%= ibg%>') no-repeat center center fixed;
+        background-size: cover;
+    }
+</style>
 <body>
-    <video src=<%=bg %> loop autoplay muted plays-inline></video>
+    <video src=<%=vbg %> loop autoplay muted plays-inline class="videobg"></video>
     <div class="weather">
         <div class="logo">
             <img src="secondlogo.png" alt="logo">

@@ -68,13 +68,13 @@ const Search = (req, res) => {
 
                 const cloud=weatherData.list[0].clouds.all
                 const time=Utils.getCurrentTime();
-                const bg=Utils.SelectBg(weatherData.list[0].weather[0].icon)
-                console.log(bg);
+                const videoBg=Utils.SelectBg(weatherData.list[0].weather[0].icon)
+                const ImgBg=Utils.SelectImgBg(weatherData.list[0].weather[0].icon)
 
                 res.render("target", { cloud:cloud,time:time,City: cityName,Visibility:visibility,Feel:feel,
                     SeaLevel:seaLevel,GroundLevel:groundLevel, Temp: temp, Min: min, Max: max, Type: type, 
                     Humidity: humidity, WindSpeed: windSpeed, WindSpeedDirection: windSpeedDirection, Pressure: pressure,
-                    img: mainIcon, bg: bg, two:two, three:three, four:four, five:five, six:six, seven:seven, eight:eight,
+                    img: mainIcon, vbg: videoBg,ibg:ImgBg, two:two, three:three, four:four, five:five, six:six, seven:seven, eight:eight,
                 Temp2:temp2,Temp3:temp3,Temp4:temp4,Temp5:temp5,Temp6:temp6,Temp7:temp7,Temp8:temp8});
             })
         }

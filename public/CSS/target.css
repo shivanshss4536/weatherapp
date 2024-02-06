@@ -229,7 +229,7 @@ label {
   video{
       display: none;
   }
-  .container{
+  .container{ 
     position: relative;
     top: initial;
     width: 100%;

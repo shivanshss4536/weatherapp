@@ -102,9 +102,29 @@ function SelectBg(icon){
         return "/video-background/Night.mp4"
     }
 }
+function SelectImgBg(icon){
+    if(icon=="01d" || icon=="02d"){
+        return "/image-background/Sunny.jpg";
+    }
+    else if(icon=="03d" || icon=="03n" || icon=="04d" || icon=="04n"){
+        return "/image-background/Foggy.jpg";
+    }
+    else if(icon=="11d" || icon=="11n" || icon=="09d" || icon=="09n" || icon=="10d" || icon=="10n"){
+        return "/image-background/Rainy.jpg";
+    }
+    else if(icon=="13d" || icon=="13n"){
+        return "/image-background/Snowy.jpg";
+    }
+    else if(icon=="50d" || icon=="50n"){
+        return "/image-background/Foggy.jpg";
+    }
+    else{
+        return "/image-background/Night.jpg"
+    }
+}
 // "/video background/Windy.mp4"
 
 // Export the functions for use in other files
 module.exports = {
-    windDegreeToDirection,KtoCelsius,SelectIcon,SelectBg,getCurrentTime
+    windDegreeToDirection,KtoCelsius,SelectIcon,SelectBg,getCurrentTime,SelectImgBg
 };
