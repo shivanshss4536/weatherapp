@@ -12,14 +12,12 @@ const mainRoute = (req, res) => {
     
 
 
-    console.log("hello1")
     res.render("index");
 }
 
 
 
 const Search = (req, res) => {
-    console.log("hello2")
     const cityName = req.body.cityName;
     const apikey = "24be5d3fa2d486a7e6e67ab9f3624567";
     const url = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + apikey;
@@ -30,6 +28,7 @@ const Search = (req, res) => {
             res.render("fail");
         }
         else {
+            console.log("hello2")
             let resultData = '';
             response.on('data', data => resultData += data);
 
