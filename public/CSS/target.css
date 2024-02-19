@@ -212,6 +212,7 @@ label {
   flex-direction: column;
   box-shadow: 0 5px 15px 10px rgb(131 81 81 / 10%);
 }
+
 .day-temp{
   font-size: 1.4rem;
 }
